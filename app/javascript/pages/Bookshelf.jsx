@@ -20,7 +20,7 @@ export default class Bookshelf extends React.Component {
     }
 
     displayBooks = (booklist) => {
-         return booklist.map(book => <Book key={book.id} title={book.title} author={book.author}></Book> )
+         return booklist.map(book => <Book key={book.id} id={book.id} title={book.title} author={book.author}></Book> )
     }
 
     render() {
@@ -28,18 +28,22 @@ export default class Bookshelf extends React.Component {
         const read = books.filter(book => book.status == "Read" )
         const wantToRead = books.filter(book => book.status == "Want to Read" )
         const reading = books.filter(book => book.status == "Reading" )
+
         return(
             <div className='hero'>
                 <h1>My Bookshelf</h1>
                 <div className='bookshelf'>
+                    <p>reading</p>
                     <div className='shelf'>
-                        {this.displayBooks(read)}
+                        {this.displayBooks(reading)}
                     </div>
+                    <p>want to read</p>
                     <div className='shelf'>
                         {this.displayBooks(wantToRead)}
                     </div>
+                    <p>read</p>
                     <div className='shelf'>
-                        {this.displayBooks(reading)}
+                        {this.displayBooks(read)}
                     </div>
                 </div>
             </div>
