@@ -9,7 +9,7 @@ export default () => (
                 A simple way to organize your 📚
             </p>
             <Link
-                to="/books"
+                to="/bookshelf"
                 className="button"
                 role="button"
             >
