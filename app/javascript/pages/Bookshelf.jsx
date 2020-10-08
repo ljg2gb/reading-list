@@ -1,5 +1,6 @@
 import React from 'react';
 import Book from '../components/Book';
+import { Link } from 'react-router-dom';
 
 export default class Bookshelf extends React.Component {
     state = {
@@ -31,7 +32,16 @@ export default class Bookshelf extends React.Component {
 
         return(
             <div className='hero'>
-                <h1>My Bookshelf</h1>
+                <h1>
+                    My Bookshelf
+                </h1>
+                <Link
+                    to="/newBook"
+                    className="button"
+                    role="button"
+                >
+                    Add Book
+                </Link>
                 <div className='bookshelf'>
                     <p>reading</p>
                     <div className='shelf'>
