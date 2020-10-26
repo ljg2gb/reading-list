@@ -10,7 +10,6 @@ export default class NewBookForm extends React.Component {
     onChange(event) {
         const { name, value } = event.target;
         this.setState({ [name]: value });
-        console.log(state)
     }
 
     onSubmit(event) {
@@ -36,7 +35,7 @@ export default class NewBookForm extends React.Component {
     }
 
     render() {
-        const { title, author, status } = this.state;
+        const { title, author } = this.state;
         return(
             <div>
                 <h1>Add a Book</h1>

@@ -1,4 +1,5 @@
 class BooksController < ApplicationController
+    
     def index
         books = Book.all
         render json: books
@@ -13,6 +14,7 @@ class BooksController < ApplicationController
         book = Book.create!(book_params)
         render json: book
     end
+
 
     def update
         book = Book.find(params[:id])
@@ -30,8 +32,9 @@ class BooksController < ApplicationController
         render json: {message: "Book successfully deleted"}
     end
 
+    
     private
     def book_params
         params.permit(:title, :author, :status)
-    end 
+    end
 end
